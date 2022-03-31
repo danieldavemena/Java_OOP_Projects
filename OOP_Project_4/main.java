@@ -1,3 +1,7 @@
+// Daniel Dave B. Meña
+// BSCPE202
+// Object Oriented Progamming
+
 import java.util.*;
 
 public class main {
@@ -23,7 +27,7 @@ public class main {
         "\na.) $398" + "\nb.) $234" + "\nc.) $300" + "\nAnswer: ",
         "10.) 5 - 5 % 5 x 5 + 5" + 
         "\na.) 5" + "\nb.) 0" + "\nc.) Undefined" + "\nAnswer: "};
-        
+
     private static String[] userAns = new String[questionnaires.length];
     private static String[] ansContainer = new String[questionnaires.length];
     private static String[] answerKey = {"c", "b", "b", "a", "b", "a", "b", "c", "c", "a"};
