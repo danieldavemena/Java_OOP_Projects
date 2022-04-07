@@ -1,3 +1,7 @@
+// Daniel Dave B. Meña
+// BSCPE202
+// Object Oriented Progamming
+
 import java.lang.reflect.InaccessibleObjectException;
 
 public class main {
