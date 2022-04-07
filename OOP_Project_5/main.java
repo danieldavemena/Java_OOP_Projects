@@ -1,7 +1,21 @@
+import java.lang.reflect.InaccessibleObjectException;
+
 public class main {
     public static void main(String[] args) {
-        game g = new game();
+        Game g = new Game();
 
-        System.out.println(g.startGame());
+        while (g.ready != false) {
+            try {
+                // Game Sstart
+                System.out.println("Welcome to Guessing Game!");
+                System.out.println("Directions: Guess in uppercase");
+                System.out.println("--------------------");
+                g.startGame();
+            } catch (InaccessibleObjectException e) {
+                g.endgame(); // Called if you win
+            } catch (IncompatibleClassChangeError e) {
+                g.endgameTwo(); // Called if you lost
+            }
+        }
     }
 }
