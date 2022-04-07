@@ -10,7 +10,7 @@ public class main {
 
         while (g.ready != false) {
             try {
-                // Game Sstart
+                // Game Start
                 System.out.println("Welcome to Guessing Game!");
                 System.out.println("Directions: Guess in uppercase");
                 System.out.println("--------------------");
