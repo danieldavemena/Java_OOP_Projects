@@ -25,7 +25,7 @@ public class main {
         "\na.) 1N" + "\nb.) 2N" + "\nc.) 0N" + "\nAnswer: ",
         "9.) How much would a $500 jacket cost if if has a 40% discount?" + 
         "\na.) $398" + "\nb.) $234" + "\nc.) $300" + "\nAnswer: ",
-        "10.) 5 - 5 % 5 x 5 + 5" + 
+        "10.) 5 - 5 / 5 x 5 + 5" + 
         "\na.) 5" + "\nb.) 0" + "\nc.) Undefined" + "\nAnswer: "};
 
     private static String[] userAns = new String[questionnaires.length];
