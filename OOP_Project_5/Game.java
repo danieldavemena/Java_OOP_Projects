@@ -33,7 +33,7 @@ public class Game {
             }
 
             // Choosing word randomly
-            String chosenWord = wordlist[(int) Math.floor(Math.random() * 13) + 1];
+            String chosenWord = wordlist[(int) Math.floor(Math.random() * 23) - 1];
             char[] toCharWord = chosenWord.toCharArray();
             char[] toCharWordDummy = chosenWord.toCharArray();
             char[] wordHolder = new char[chosenWord.length()];
