@@ -11,15 +11,15 @@ public class Game {
      */
     File words = new File("/home/daniel/Documents/03_programming_projects/Java_OOP_Projects/OOP_Project_5/words.txt");
     private Scanner sc = new Scanner(System.in);
-    private String[] wordlist = new String[23];
     private int numOfGuesses = 1;
     private String bar = "--------------------";
     public boolean ready = true;
 
     void startGame() {
+        String[] wordlist = new String[23];
         numOfGuesses = 1;
         int previousCounter = 0;
-        int scoreCounter = 0;
+        int currentCounter = 0;
         int lives = 5;
         int count = 0;
 
@@ -71,12 +71,12 @@ public class Game {
                 for (int i = 0; i < chosenWord.length(); i++) {
                     if (guess == toCharWord[i]) {
                         wordHolder[i] = guess;
-                        scoreCounter++;
+                        currentCounter++;
                     }
                 }
 
                 // Guess counter
-                if (previousCounter != scoreCounter) {
+                if (previousCounter != currentCounter) {
                     System.out.println("Correct!");
                 } else {
                     System.out.println("Not in the word! Try Again!");
@@ -84,7 +84,7 @@ public class Game {
                     numOfGuesses++;
                 }
 
-                scoreCounter = previousCounter;
+                currentCounter = previousCounter;
 
                 // Display progress
                 System.out.println(bar);
@@ -106,10 +106,13 @@ public class Game {
             // If game lost
             throw new IncompatibleClassChangeError();
 
+            // NOTE: File won't open without handling the exception
         } catch (FileNotFoundException e) {
+
         }
     }
 
+    // Win funcion
     void endgame() {
         System.out.println("Your guess it in " + numOfGuesses + " tries.");
         System.out.print("Would you like to play again? (y/n): ");
@@ -123,6 +126,7 @@ public class Game {
         System.out.println(bar);
     }
 
+    // Lose function
     void endgameTwo() {
         System.out.println("Sorry, you guessed wrong.");
         System.out.print("Would you like to play again? (y/n): ");
