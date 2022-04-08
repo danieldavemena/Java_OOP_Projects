@@ -13,6 +13,7 @@ public class Game {
     private Scanner sc = new Scanner(System.in);
     private String[] wordlist = new String[23];
     private int numOfGuesses = 1;
+    private String bar = "--------------------";
     public boolean ready = true;
 
     void startGame() {
@@ -33,7 +34,7 @@ public class Game {
             }
 
             // Choosing word randomly
-            String chosenWord = wordlist[(int) Math.floor(Math.random() * 23) - 1];
+            String chosenWord = wordlist[(int) Math.floor(Math.random() * 23)];
             char[] toCharWord = chosenWord.toCharArray();
             char[] toCharWordDummy = chosenWord.toCharArray();
             char[] wordHolder = new char[chosenWord.length()];
@@ -42,7 +43,7 @@ public class Game {
             System.out.print("Word: ");
 
             for (int k = 0; k < chosenWord.length(); k++) {
-                int randomizer = (int) Math.floor(Math.random() * 2) + 1;
+                int randomizer = (int) Math.floor(Math.random() * 2);
 
                 if (randomizer == 1) {
                     toCharWordDummy[k] = '?';
@@ -52,7 +53,7 @@ public class Game {
                 System.out.print(wordHolder[k]);
             }
 
-            System.out.println("\n--------------------");
+            System.out.println("\n" + bar);
 
             // Game Start
             while (lives > 0) {
@@ -74,7 +75,7 @@ public class Game {
                     }
                 }
 
-                // Score counter
+                // Guess counter
                 if (previousCounter != scoreCounter) {
                     System.out.println("Correct!");
                 } else {
@@ -86,11 +87,12 @@ public class Game {
                 scoreCounter = previousCounter;
 
                 // Display progress
+                System.out.println(bar);
                 for (int j = 0; j < chosenWord.length(); j++) {
                     System.out.print(wordHolder[j]);
 
                 }
-                System.out.println("\n--------------------");
+                System.out.println("\n" + bar);
 
                 // Game win checker
                 String chosen = new String(toCharWord);
@@ -118,7 +120,7 @@ public class Game {
         } else {
             ready = false;
         }
-        System.out.println("--------------------");
+        System.out.println(bar);
     }
 
     void endgameTwo() {
@@ -131,6 +133,6 @@ public class Game {
         } else {
             ready = false;
         }
-        System.out.println("--------------------");
+        System.out.println(bar);
     }
 }
