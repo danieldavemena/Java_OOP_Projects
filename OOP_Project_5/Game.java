@@ -16,7 +16,7 @@ public class Game {
     public boolean ready = true;
 
     void startGame() {
-        String[] wordlist = new String[23];
+        String[] wordlist = new String[2048];
         numOfGuesses = 1;
         int previousCounter = 0;
         int currentCounter = 0;
@@ -34,7 +34,7 @@ public class Game {
             }
 
             // Choosing word randomly
-            String chosenWord = wordlist[(int) Math.floor(Math.random() * 23)];
+            String chosenWord = wordlist[(int) Math.floor(Math.random() * 2048) + 1];
             char[] toCharWord = chosenWord.toCharArray();
             char[] toCharWordDummy = chosenWord.toCharArray();
             char[] wordHolder = new char[chosenWord.length()];

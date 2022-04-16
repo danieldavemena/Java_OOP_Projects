@@ -4,7 +4,7 @@
 
 import java.lang.reflect.InaccessibleObjectException;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Game g = new Game();
 
@@ -12,7 +12,7 @@ public class main {
             try {
                 // Game Start
                 System.out.println("Welcome to Guessing Game!");
-                System.out.println("Directions: Guess in uppercase");
+                System.out.println("Directions: Guess in LOWERCASE");
                 System.out.println("--------------------");
                 g.startGame();
             } catch (InaccessibleObjectException e) {
