@@ -56,7 +56,7 @@ public class accounts {
 
         // CHECKS IF CONDITIONS ARE MET
         if (password.equals(passwordmatcher) && password.length() >= 8 && exist == false
-                && password.matches("^[a-zA-Z0-9]+$") && username.matches("^[a-zA-Z0-9._]+$")) {
+                && password.matches("^[a-zA-Z0-9]+$") && username.matches("[a-zA-Z0-9._]+$")) {
             try {
                 FileWriter records = new FileWriter(
                         "/home/daniel/Documents/03_programming_projects/Java_OOP_Projects/OOP_Project_6/records.txt",
@@ -75,7 +75,7 @@ public class accounts {
 
         } else if (exist == true) {
             System.out.println("\nUsername is not available");
-        } else if (!username.equals("^[a-zA-Z0-9._]+$")) {
+        } else if (!username.equals("[a-zA-Z0-9._]+$")) {
             System.out.println("\nUsername cannot contain spaces");
         } else if (!password.equals(passwordmatcher)) {
             System.out.println("\nSorry, the password you entered does not match");
@@ -114,13 +114,13 @@ public class accounts {
 
                 if (sep[0].equals(username) && sep[1].equals(password)) {
                     System.out.println("\nLogged in successfully");
+                    throw new IOException();
                 }
-
             }
 
-            read.close();
+            System.out.println("\nWrong username or password");
 
-        } catch (Exception ex) {
+        } catch (IOException ex) {
 
         }
         sc.close();
